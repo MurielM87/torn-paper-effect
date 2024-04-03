@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Torn Paper</title>
+</head>
+<body>
+
+<div id='bg'></div>
+<div id='torn'>
+  <div class='outer'></div>
+  <div class='inner'></div>
+  <div class='torn_img'></div>
+</div>
+
+
+<svg>
+  <filter id='noise'>
+    <feTurbulence type='turbulence' baseFrequency='0.08' numOctaves='10' seed='24'>
+      <!--
+      <animate attributeName="seed" dur="0.8s" values="1;5" repeatCount="indefinite" />
+-->
+    </feTurbulence>
+    <feDisplacementMap xChannelSelector="B" yChannelSelector="G" scale="8" in="SourceGraphic">
+    </feDisplacementMap>
+  </filter>
+</svg>
+</body>
+</html>
